@@ -1,0 +1,6 @@
+name: BPLib
+author: Butter PL
+link:
+version: '${version}'
+main: com.butterpl.bplib.Main
+api-version: '1.20'
