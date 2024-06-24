@@ -3,6 +3,16 @@ plugins {
 }
 
 apply plugin: 'maven-publish'
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.butterpl'
+            artifactId 'bplib'
+            version '1.0.0'
+            from components.java
+        }
+    }
+}
 
 group = 'com.butterpl'
 version = '1.0.0'
@@ -16,14 +26,6 @@ repositories {
     maven {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
-    }
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from components.java
-        }
     }
 }
 
@@ -58,8 +60,4 @@ processResources {
     filesMatching('plugin.yml') {
         expand props
     }
-}
-
-jar {
-    destinationDirectory = file("C:\\Users\\Administrator\\Desktop\\플긴제작섭2\\plugins")
 }
